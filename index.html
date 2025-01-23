@@ -5,6 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World Clock Project</title>
     <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 0 10px;
+        }
+        .date {
+            opacity: 0.7;
+        }
+        .container {
+            max-width: 600px;
+            margin: 60px auto;
+            background-color: #f0f0f0;
+            padding: 60px;
+            margin: 60px auto;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }
+        .city {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            border-bottom: 2px dashed #ccc;
+            padding: 20px 0;
+        }
+        .time {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .time small {
+            font-size: 12px; 
+            line-height: 36px;
+            vertical-align: middle;
+        }
         h1 {
             font-family: 'Courier New', Courier, monospace;
             font-size: 30px;
@@ -14,6 +52,15 @@
             font-family: 'Courier New', Courier, monospace;
             font-size: 12px;
             text-align: center;
+            opacity: 0.7;
+        }
+        select {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
         }
     </style>
 </head>
@@ -29,17 +76,25 @@
     <option value="Europe/London">London</option>
     <option value="Europe/Paris">Paris</option>
 </select>
-
+<br />
+<br />
 <div class ="city">
+    <div>
     <h2>Los Angeles</h2>
     <div class="date">Date</div>
-    <div class="time">Time</div>
+    </div>
+    <div class="time">Time
+        <small>AM/PM</small>
+    </div>
 </div>
 <div class ="city">
-    <h2>Fort McMurray</h2>
+    <div>
+    <h2>Regina</h2>
     <div class="date">Date</div>
-    <div class="time">Time</div>
-</div>
+    </div>
+    <div class="time">Time
+        <small>AM/PM</small>
+    </div>
 </div>
     <footer>
         This project was coded by <a href="https://github.com/SnoopyJacks" target="_blank">Justine Ziola</a> and is open-sourced on 
