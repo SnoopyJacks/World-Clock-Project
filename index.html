@@ -4,14 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World Clock Project</title>
+    <style>
+        h1 {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 30px;
+            text-align: center;
+        }
+        footer {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
     <h1>
         World Clock Project
     </h1>
+    <select name="world-clock" id="world-clock">
+    <option value="">Select a city....</option>
+    <option value="America/New_York">New York</option>
+    <option value="Asia/Tokyo">Tokyo</option>
+    <option value="Europe/London">London</option>
+    <option value="Europe/Paris">Paris</option>
+</select>
 
+<div class ="city">
+    <h2>Los Angeles</h2>
+    <div class="date">Date</div>
+    <div class="time">Time</div>
+</div>
+<div class ="city">
+    <h2>Fort McMurray</h2>
+    <div class="date">Date</div>
+    <div class="time">Time</div>
+</div>
+</div>
     <footer>
-        This project was coded by <a href="https://github.com/SnoopyJacks" target="_blank">Justine Ziola</a> and is open-sourced on <a href="https://github.com/SnoopyJacks/World-Clock-Project" target="_blank">GitHub</a> and is hosted on <a href="https://worldclockprojectjz.netlify.app" target="_blank">Netlify</a>
+        This project was coded by <a href="https://github.com/SnoopyJacks" target="_blank">Justine Ziola</a> and is open-sourced on 
+        <a href="https://github.com/SnoopyJacks/World-Clock-Project" target="_blank">GitHub</a> 
+        and is hosted on <a href="https://worldclockprojectjz.netlify.app" target="_blank">Netlify</a>.
     </footer>
 </body>
 </html>
