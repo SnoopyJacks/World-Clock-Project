@@ -5,66 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World Clock Project</title>
     <style>
-        body {
-            font-family: 'Courier New', Courier, monospace;
-            background-color: #05004e; /* First Color */
-            color: #ffcccc; /* Fourth Color */
-        }
-        h2 {
-            font-size: 24px;
-            font-weight: bold;
-            margin: 0 0 10px;
-            color: #fb7777; /* Third Color */
-        }
-        .date {
-            opacity: 0.7;
-        }
-        .container {
-            max-width: 600px;
-            margin: 60px auto;
-            background-color: #ffcccc; /* Fourth Color */
-            padding: 60px;
-            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 20px;
-        }
-        .city {
-            display: flex;
-            justify-content: space-between;
-            margin: 20px 0;
-            border-bottom: 2px dashed #ff0000; /* Second Color */
-            padding: 20px 0;
-        }
-        .time {
-            font-size: 20px;
-            font-weight: bold;
-        }
-        .time small {
-            font-size: 12px; 
-            line-height: 36px;
-            vertical-align: middle;
-        }
-        h1 {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 30px;
-            text-align: center;
-            color: #fb7777; /* Third Color */
-        }
-        footer {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 12px;
-            text-align: center;
-            opacity: 0.7;
-            color: #ffcccc; /* Fourth Color */
-        }
-        select {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ff0000; /* Second Color */
-        }
-    </style>
+    body {
+        font-family: 'Courier New', Courier, monospace;
+        background-color: #ffffff; /* Light background for better readability */
+        color: #05004e; /* Dark text color for contrast */
+    }
+    h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0 0 10px;
+        color: #ff0000; /* Second Color */
+    }
+    .date {
+        opacity: 0.7;
+    }
+    .container {
+        max-width: 600px;
+        margin: 60px auto;
+        background-color: #fb7777; /* Third Color */
+        padding: 60px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+    }
+    .city {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+        border-bottom: 2px dashed #05004e; /* First Color */
+        padding: 20px 0;
+    }
+    .time {
+        font-size: 20px;
+        font-weight: bold;
+        color: #ffffff; /* Light text for better contrast */
+    }
+    .time small {
+        font-size: 12px; 
+        line-height: 36px;
+        vertical-align: middle;
+    }
+    h1 {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 30px;
+        text-align: center;
+        color: #ff0000; /* Second Color */
+    }
+    footer {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 12px;
+        text-align: center;
+        opacity: 0.7;
+        color: #05004e; /* First Color */
+    }
+    select {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid #fb7777; /* Third Color */
+    }
+</style>
 </head>
 <body>
     <div class="container">
