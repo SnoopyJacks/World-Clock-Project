@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js" 
     integrity="sha512-hUhvpC5f8cgc04OZb55j0KNGh4eh7dLxd/dPSJ5VyzqDWxsayYbojWyl5Tkcgrmb/RVKCRJI1jNlRbVP4WWC4w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data.min.js"></script>
+
     <title>World Clock Project</title>
     <style>
     body {
@@ -83,6 +85,7 @@
 </select>
 <br />
 <br />
+<div class="cities" id="cities">
 <div class ="city" id="LA">
     <div>
     <h2>Los Angeles</h2>
@@ -92,14 +95,15 @@
         <small>AM/PM</small>
     </div>
 </div>
-<div class ="city" id="Paris">
+<div class ="city" id="Paris"> 
     <div>
-    <h2>Regina</h2>
+    <h2>Paris</h2>
     <div class="date">Date</div>
     </div>
     <div class="time">Time
         <small>AM/PM</small>
     </div>
+</div>
 </div>
     <footer>
         This project was coded by <a href="https://github.com/SnoopyJacks" target="_blank">Justine Ziola</a> and is open-sourced on 
@@ -107,11 +111,55 @@
         and is hosted on <a href="https://worldclockprojectjz.netlify.app" target="_blank">Netlify</a>.
     </footer>
     <script>
-let laElement = document.querySelector('#LA');
-let laElementDateElement= laElement.querySelector('#.date');
-let laElementTimeElement= laElement.querySelector('#.time');
-laElementDateElement.innerHTML = moment().format('MMMM Do YYYY');
-laElementTimeElement.innerHTML = "time";
+        function updateTime() {
+            // LA
+            let laElement = document.querySelector('#LA');
+            if (laElement) {
+                let laElementDateElement = laElement.querySelector('.date');
+                let laElementTimeElement = laElement.querySelector('.time');
+                let laElementTimezone = moment().tz('America/Los_Angeles');
+        
+                laElementDateElement.innerHTML = laElementTimezone.format('MMMM Do YYYY');
+                laElementTimeElement.innerHTML = laElementTimezone.format('h:mm:ss [<small>]A[</small>]');
+            }
+        
+            // Paris
+            let parisElement = document.querySelector('#Paris');
+            if (parisElement) {
+                let parisElementDateElement = parisElement.querySelector('.date');
+                let parisElementTimeElement = parisElement.querySelector('.time');
+                let parisElementTimezone = moment().tz('Europe/Paris');
+        
+                parisElementDateElement.innerHTML = parisElementTimezone.format('MMMM Do YYYY');
+                parisElementTimeElement.innerHTML = parisElementTimezone.format('h:mm:ss [<small>]A[</small>]');
+            }
+        }
+        
+        function updateCity(event) {
+            let cityTimezone = event.target.value;
+            if (cityTimezone === "current") {
+                cityTimezone = moment.tz.guess();
+            }
+            let cityName = cityTimezone.replace("_", " ").split("/")[1];
+            let cityTime = moment().tz(cityTimezone);
+            let citiesElement = document.querySelector('#cities');
+            citiesElement.innerHTML = `
+            <div class="city">
+                <div>
+                    <h2>${cityName}</h2>
+                    <div class="date">${cityTime.format('MMMM Do YYYY')}</div>
+                </div>
+                <div class="time">${cityTime.format('h:mm:ss')} <small>${cityTime.format("A")}</small></div>
+            </div>
+            `;
+        }
+        
+        updateTime();
+        setInterval(updateTime, 1000);
+        
+        let citiesSelectElement = document.querySelector('#world-clock');
+        citiesSelectElement.addEventListener('change', updateCity);
+        
     </script>
 </body>
 </html>
